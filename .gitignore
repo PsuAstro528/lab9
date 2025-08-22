@@ -6,6 +6,7 @@ Manifest.toml
 data
 *.prof
 .ipynb_checkpoints
+demo*backup*.jl
 
 snakemake_ex?/draws_*.csv
 snakemake_ex?/summary_*.toml
