@@ -7,13 +7,13 @@ Goals:
 - Create a Julia package
 - Organize your code using a module
 
-Follow instructions in [ex1.md](https://github.com/PsuAstro528/lab9-start/blob/main/ex1.md).
+Follow instructions in [ex1.md](https://github.com/PsuAstro528/lab9/blob/main/ex1.md).
 
 ## Exercise 2:  Using a workflow management system
 Goals:
 - Use a workflow management system
 
-Follow instructions in [ex2.md](https://github.com/PsuAstro528/lab9-start/blob/main/ex2.md).
+Follow instructions in [ex2.md](https://github.com/PsuAstro528/lab9/blob/main/ex2.md).
 
 
 ## Exercise 3:  Reflect on Goals for Semester
@@ -22,5 +22,5 @@ Goals:
 - Identify goals which you hope to continue working beyond this semester.
 - Develop a plan for building skills that you wish to develop.
 
-Follow instructions in [ex3.md](https://github.com/PsuAstro528/lab9-start/blob/main/ex3.md).
+Follow instructions in [ex3.md](https://github.com/PsuAstro528/lab9/blob/main/ex3.md).
 
