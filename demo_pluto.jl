@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.27
+# v0.20.17
 
 using Markdown
 using InteractiveUtils
@@ -11,7 +11,9 @@ begin
 	import Pkg
 	# Tell Julia to use the Project.toml and Manifest.toml specified in the directory
 	Pkg.activate(path)
-	using PlutoLinks
+	# Shouldn't need to instantiate if you build first
+	# Pkg.instantiate()
+	using PlutoLinks  # provides @ingredients
 end
 
 # ╔═╡ 71a996eb-f57e-4d57-a24b-b249edf27d0d
@@ -19,7 +21,7 @@ end
 
 # ╔═╡ 5046b25e-2622-4356-b8ec-bf28f94e1b94
 # Uncomment and update the line below if you need to set the path to your package 
-#path = joinpath(homedir(),"Teach/Astro528/Fall2023/labs/lab9-start")
+#path = joinpath(homedir(),"lab9")
 
 # ╔═╡ 383e97ab-203d-4663-ad1e-26dda1db26e6
 @test Pkg.project().name == "ExamplePkg"

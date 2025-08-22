@@ -16,8 +16,8 @@ If you might want to officially register your package, then review the [recommen
 julia -e 'using Pkg; Pkg.generate("ExamplePkg")'
 ```
 2. Change into directory `cd ExamplePkg`, copy any other files you'd like to be in your package into the directory from the beginning and use git to add and commit them to your repository.  Those might include:
-   - a [LICENSE](https://github.com/PsuAstro528/lab9-start/blob/master/LICENSE) so others know how you'd like your code to be used
-   - [.gitignore](https://github.com/PsuAstro528/lab9-start/blob/master/.gitignore) if there are some files that you don't want added to your git repository
+   - a [LICENSE](https://github.com/PsuAstro528/lab9/blob/master/LICENSE) so others know how you'd like your code to be used
+   - [.gitignore](https://github.com/PsuAstro528/lab9/blob/master/.gitignore) if there are some files that you don't want added to your git repository
 ```sh
 cp PATH/LICENSE .
 cp PATH/.gitignore .
@@ -123,9 +123,9 @@ git commit -m "init tests"
 git push
 ```
 
-   - Optionally, add a [.github/workflows/test.yaml](https://github.com/PsuAstro528/lab3-start/blob/main/.github/workflows/test.yaml) file, if you've like GitHub to be able to perform tests and/or enable Continuous Integration testing.  
+   - Optionally, add a [.github/workflows/test.yaml](https://github.com/PsuAstro528/lab3/blob/main/.github/workflows/test.yaml) file, if you've like GitHub to be able to perform tests and/or enable Continuous Integration testing.  
 
-   - Optionally, add a [.github/workflows/ExportPluto.yaml](https://github.com/PsuAstro528/lab3-start/blob/main/.github/workflows/ExportPluto.yaml) file, if you've like GitHub to be able to build html versions of your Pluto notebooks and deploy them via GitHub Pages.  
+   - Optionally, add a [.github/workflows/ExportPluto.yaml](https://github.com/PsuAstro528/lab3/blob/main/.github/workflows/ExportPluto.yaml) file, if you've like GitHub to be able to build html versions of your Pluto notebooks and deploy them via GitHub Pages.  
 
    - Note that, I might have to disable GitHub Actions for most repositories in the PsuAstro528 GitHub organization (if some students' projects are using significant resources), so that we didn't run exceed our allocation on GitHub.  In that case, your automated testing and notebook building won't happen.  If you create a repository that's not part of the PsuAstro528 organization, then you'll have control of whether/which repositories can automatically trigger workflows via GitHub Actions.
 
