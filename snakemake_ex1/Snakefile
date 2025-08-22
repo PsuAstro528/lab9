@@ -9,7 +9,7 @@ rule instantiate:
    output: 
       "0_instantiated"
    shell:
-      "julia --project -e 'import Pkg; Pkg.instantiate()'; touch {output}"
+      "julia --project -e 'import Pkg; Pkg.build()'; touch {output}"
 
 rule gen_rand_vars:
    input:

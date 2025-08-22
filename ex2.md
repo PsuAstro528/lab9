@@ -148,10 +148,6 @@ INSERT RESPONCE
 
 3d.  Run snakemake a second time, this time using a separate slurm job for each step of the pipeline by running either.
 ```shell
-snakemake --profile=../profile/open --latency-wait=30
-```
-If you find your job is sitting in the open queue for more than ~10 minutes, then you you could try submitting to our classroom allocation.
-```shell
 snakemake --profile=../profile/sla --latency-wait=30
 ```
 How did the resulting actions compare to your prediction?
