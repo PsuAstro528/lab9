@@ -13,7 +13,8 @@ begin
 	Pkg.activate(path)
 	# Shouldn't need to instantiate if you build first
 	# Pkg.instantiate()
-	using PlutoLinks  # provides @ingredients
+	using PlutoTests
+        using PlutoLinks  # provides @ingredients
 end
 
 # ╔═╡ 71a996eb-f57e-4d57-a24b-b249edf27d0d
