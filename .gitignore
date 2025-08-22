@@ -1,12 +1,16 @@
 *.jl.cov
 *.jl.*.cov
 *.jl.mem
-deps/deps.jl
-Manifest.toml
 data
+deps/deps.jl
+deps/build.log
+Manifest.toml
+
 *.prof
 .ipynb_checkpoints
+src/.ipynb_checkpoints
 demo*backup*.jl
+core*
 
 snakemake_ex?/draws_*.csv
 snakemake_ex?/summary_*.toml
