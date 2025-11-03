@@ -9,16 +9,19 @@ Organizing code into modules is another good software development habit that you
 
 Instructions for [creating a Julia Package](https://julialang.github.io/Pkg.jl/v1/creating-packages/):
 
-0.  Changed out of the directory with this lab's starter repo (e.g., `cd /storage/work/USERID/`).  This is so that in subsequent steps you will create a new directory that is not inside another git repository (like the lab's starter repository).  
+0.  Change out of the directory with this lab's starter repo (e.g., `cd ~`).  This is so that in subsequent steps you will create a new directory that is not inside another git repository (like the lab's starter repository).  
 1.  Use `Pkg.generate("ExamplePkg")` to create a new directory with the bare-bone minimal files for your package (ExamplePkg/Project.toml and ExamplePkg/src/ExamplePkg.jl).  Feel free to pick your own package name.
 If you might want to officially register your package, then review the [recommended conventions for package naming](https://julialang.github.io/Pkg.jl/v1/creating-packages/#Package-naming-guidelines-1) before picking your name.
-```julia
+```sh
+cd ~
 julia -e 'using Pkg; Pkg.generate("ExamplePkg")'
 ```
-2. Change into directory `cd ExamplePkg`, copy any other files you'd like to be in your package into the directory from the beginning and use git to add and commit them to your repository.  Those might include:
+2. Change into directory, copy at least one additional file that you'd like to be in your package into the directory from the beginning and use git to add and commit them to your repository.  Those might include:
    - a [LICENSE](https://github.com/PsuAstro528/lab9/blob/master/LICENSE) so others know how you'd like your code to be used
    - [.gitignore](https://github.com/PsuAstro528/lab9/blob/master/.gitignore) if there are some files that you don't want added to your git repository
+You can find examples of these in either your lab9 starter repository (which the commands below assumed are located in PATH) 
 ```sh
+cd ExamplePkg
 cp PATH/LICENSE .
 cp PATH/.gitignore .
 ```
@@ -31,7 +34,7 @@ git commit -m "init commit"
 git branch -M main
 ```
 
-4. Go to [GitHub](https://github.com) and click the green "New" button to create a new repository.  
+4. Go to [GitHub](https://github.com), make sure you're logged in, and click the green "New" button to create a new repository.  
    - Enter a repository name that matches your repository name, but ends in ".jl",  e.g., "ExamplePkg.jl".  
    - Add a brief description (optional)
    - Choose whether you'd like your repository to be public or private.  Do _not_ check "Initialize this repository with a README".  Select None for "Add .gitignore" and "Add a license".  
@@ -153,7 +156,7 @@ julia -e 'using Pkg; Pkg.add(url="https://github.com/GITHUBID/ExamplePkg.jl")'
 using Pkg
 Pkg.develop(url="git@github.com:GITHUBID/ExamplePkg.jl.git")
 ```
-This will cause Julia to download the full git repository for this package into the dev directory (by default `~/.julia/dev/ExamplePkg`, but this is may be overwridden by your JULIA_DEPOT_PATH and/or JULIA_PKG_DEVDIR environment variables; On Roar Collab, we created a symlink to /storage/work/USERID/.julia).  Now, you can change into that directory to pull, push, commit and use all other features of git.  By comitting and pushing your code, you'll be updating the package on github.  
+This will cause Julia to download the full git repository for this package into the dev directory (by default `~/.julia/dev/ExamplePkg`, but this is may be overwridden by your JULIA_DEPOT_PATH and/or JULIA_PKG_DEVDIR environment variables.).  Now, you can change into that directory to pull, push, commit and use all other features of git.  By comitting and pushing your code, you'll be updating the package on github.  
 
 
 11. Add a link to the github Repo your new package below.
@@ -163,18 +166,7 @@ This will cause Julia to download the full git repository for this package into 
 12. (Very optional) Consider adding other nice features to your project.  For example:
    - If you want code to be run whenever your package in installed (e.g., downloading large datafiles that aren't stored on github), you can put that code in [`deps/build.jl`](https://pkgdocs.julialang.org/v1/creating-packages/#Adding-a-build-step-to-the-package).
    - If you want to generate webpages of documentation from your docstrings, you could add a [`docs` directory](https://github.com/JuliaLang/Example.jl/tree/master/docs) with the files necessary for [Documenter.jl](https://juliadocs.github.io/Documenter.jl/latest/).
-   - If you want to make it easy for people to install everything they need (particularly if your code combines multiple languages), then consider providing a docker-compose.yml file like
-```
-version: '3.7'
-services:
-  julia:
-    image: julia:latest
-    volumes:
-      - .:/home/jovyan/work
-    ports:
-      - 8888:8888
+   - If you want to make it easy for people to install everything they need (particularly if your code combines multiple languages), then consider providing a Apptainder definition file like [julia_lab7.def](https://github.com/PsuAstro528/lab7/blob/main/julia_lab7.def) from lab 7.
 ```
 
-
-13. (Very optional) Register your package.  If you publish your package in a public GitHub repository, then people can add your package, provided that they know the url.  I're interested in making it even easier for other people to use your package, then you could register your package in the General Julia Registry.  Then others can easily install it by name, rather than by url.  Instructions to request your package be registered are at [Registrator.jl](https://github.com/JuliaRegistries/Registrator.jl).  We can discuss this in a future class if people express interest.
-
+13. (Very optional) Register your package.  If you publish your package in a public GitHub repository, then people can add your package, provided that they know the url.  If you're interested in making it even easier for other people to use your package, then you could register your package in the General Julia Registry.  Then others can easily install it by name, rather than by url.  Instructions to request your package be registered are at [Registrator.jl](https://github.com/JuliaRegistries/Registrator.jl).  We can discuss this in a future class if people express interest.
