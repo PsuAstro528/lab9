@@ -10,4 +10,5 @@ default-resources:
    runtime: 15          # in minutes
    slurm_account: hpc4astro_crch_fall2025  # Charge to Astro 528 account
    slurm_partition: standard  # currently only option on Lynx
-verbose: true           # for extra logging info
+   #slurm_extra: 
+   verbose: true          # for extra logging info

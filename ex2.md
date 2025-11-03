@@ -5,7 +5,8 @@ Goals:
 - Use a workflow management system
 
 In this exercise, you will inspect three different [Snakemake](https://snakemake.readthedocs.io/en/stable/) scripts.
-The Astro 528 environment that is loaded when you start a Jupyter lab session activates a conda environment that already includes snakemake.  If you log in via ssh, then the key steps from that script to have access to snakemake are
+The Astro 528 environment that is loaded when you start a Jupyter lab session activates a conda environment that already provides access snakemake.  
+If instead you log in via ssh, then the key steps from that script to have access to snakemake are
 ```shell
 module load anaconda/2023
 eval "$(/storage/icds/RISE/sw8/anaconda-2023.09-0/bin/conda shell.bash hook)"
@@ -115,7 +116,7 @@ INSERT RESPONCE
 
 
 3a.  Change into directory for snakemake_ex3 and inspect its Snakemake file.
-What do you predict will happen when you run Snakemake twice, first specifying `until download` and the second time letting it run to completion?
+What do you predict will happen when you run Snakemake twice, first specifying `--until download` and the second time letting it run to completion?
 
 INSERT RESPONCE
 
@@ -134,7 +135,7 @@ INSERT RESPONCE
 INSERT RESPONCE
 
 
-3d.  Run snakemake a second time, this time using a separate slurm job for each step of the pipeline by running either.
+3d.  Run snakemake a second time, but this time using a separate slurm job for each step of the pipeline by running
 ```shell
 snakemake --profile=../profile/sla --latency-wait=30
 ```
@@ -155,11 +156,10 @@ How did the resulting actions compare to your prediction?
 INSERT RESPONCE
 
 
-3g.  (Optional.  Hopefully helpful if you're considering using Snakemake for your project.)  
+3g.  (Optional:  Hopefully this will be helpful if you're considering using Snakemake for your project.)  
 Edit the Snakemake file so that snakemake will generate a csv file for each fits file (e.g., neidL2_20231014T150537.csv).
 Try running snakemake with your new script.  If you get an error, try editting your Snakemake file to fix it (just a few times is fine).   
 
 
-Regardless of which step you reach before moving on to the final exercise, commit and push your changes to the ex1.md, ex2.md, ex3.md, snakemake_ex2/config.yaml and snakemake_ex3/Snakefile.
-
+Regardless of which step you reach before moving on to the final exercise, commit and push your changes to the ex1.md, ex2.md, ex3.md, snakemake_ex3/config.yaml and snakemake_ex3/Snakefile.
 
