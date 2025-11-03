@@ -1,0 +1,13 @@
+executor: slurm         
+jobs: 10                # maximum number of jobs running at once
+latency-wait: 30        # Reduce risk of NFS not keeping up with snakemake
+default-resources: 
+   mem_mb_per_cpu: 4096 # Max RAM per CPU core in MB
+   # mem_mb: 4096       # Max RAM per node in MB
+   nodes: 1             # Number of ndoes for job
+   tasks: 1             # Number of tasks per job
+   cpus_per_task: 1     # One CPU core per task 
+   runtime: 15          # in minutes
+   slurm_account: hpc4astro_crch_fall2025  # Charge to Astro 528 account
+   slurm_partition: standard  # currently only option on Lynx
+verbose: true           # for extra logging info

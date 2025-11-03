@@ -1,0 +1,12 @@
+fits_dir: input
+toml_dir: output
+csv_dir:  output
+out_dir:  output
+
+download_script: neid_download_files_2025_07_02.sh
+
+preprocess_param: 1.0
+
+slurm_account: hpc4astro_crch_fall2025
+slurm_partition: standard
+
