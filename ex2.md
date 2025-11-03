@@ -5,25 +5,13 @@ Goals:
 - Use a workflow management system
 
 In this exercise, you will inspect three different [Snakemake](https://snakemake.readthedocs.io/en/stable/) scripts.
-
-- Initialize conda
+The Astro 528 environment that is loaded when you start a Jupyter lab session activates a conda environment that already includes snakemake.  If you log in via ssh, then the key steps from that script to have access to snakemake are
 ```shell
-conda init bash
+module load anaconda/2023
+eval "$(/storage/icds/RISE/sw8/anaconda-2023.09-0/bin/conda shell.bash hook)"
+module load julia/1.11.2
+conda activate /storage/egroup/hpc4astro/default/astro_528/julia_env
 ```
-Start a new terminal window for future commands.
-
--  Install snakemake (minimal version)
-```shell
-conda activate base
-mamba create -c bioconda -c conda-forge -n snakemake snakemake-minimal
-```
-The above steps only need to be done once (on Roar Collab).
-
--  Activate the conda environtment for snakemake
-```shell
-conda activate snakemake
-```
-You'll need to repeate this step in each terminal window (when you want to be able to run snakemake).  
 
 1a.  Change into directory for snakemake_ex1 and inspect its Snakemake file.
 What do you predict will happen when you run Snakemake? 
