@@ -11,13 +11,13 @@ If instead you log in via ssh, then the key steps from that script to have acces
 module load anaconda/2023
 eval "$(/storage/icds/RISE/sw8/anaconda-2023.09-0/bin/conda shell.bash hook)"
 module load julia/1.11.2
-conda activate /storage/egroup/hpc4astro/default/astro_528/julia_env
+conda activate ~/hpc4astro/astro_528/julia_env
 ```
 
 1a.  Change into directory for snakemake_ex1 and inspect its Snakemake file.
 What do you predict will happen when you run Snakemake? 
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 1b.  Run snakemake.
@@ -26,31 +26,31 @@ snakemake -c 1
 ```
 How did the files created compare to your prediction?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 1c.  Delete one of the toml files.  E.g., `rm summary_mu=0_sigma=1.toml`.  
 What do you predict will happen when you rerun Snakemake?  
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 1d.  Run snakemake again.
 How did the resulting actions compare to your prediction?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 1e.  Delete one of the csv files.  E.g., `rm summary_mu=0_sigma=1.csv`.  
 What do you predict will happen when you rerun Snakemake?  
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 1f.  Run snakemake again.
 How did the resulting actions compare to your prediction?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 
@@ -58,7 +58,7 @@ INSERT RESPONCE
 2a.  Change into directory for snakemake_ex2 and inspect its Snakemake file.
 What do you predict would happen when you run Snakemake?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 If you think it would run successfully to completion, then try it and see.  Then explain why it didn't.
 
@@ -72,12 +72,12 @@ snakemake -c 1 --until download
 ```
 How did the resulting actions compare to your prediction?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 2c.  What do you predict will happen if you run Snakemake a second time (without an until option)?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 2d.  Run snakemake a second time, this time using 4 cores and letting it run to completion.
@@ -86,31 +86,31 @@ snakemake -c 4
 ```
 How did the resulting actions compare to your prediction?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 2e.  Delete one of the toml files E.g., `rm neidL2_20231014T150537.toml`
 What do you predict will happen when you rerun Snakemake?  
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 2f.  Run snakemake again.
 How did the resulting actions compare to your prediction?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 2g.  Delete one of the fits files E.g., `rm neidL2_20231014T150537.fits`
 What do you predict will happen when you rerun Snakemake?  
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 2h.  Run snakemake again.
 How did the resulting actions compare to your prediction?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 
@@ -118,7 +118,7 @@ INSERT RESPONCE
 3a.  Change into directory for snakemake_ex3 and inspect its Snakemake file.
 What do you predict will happen when you run Snakemake twice, first specifying `--until download` and the second time letting it run to completion?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 3b.  Run snakemake once.
@@ -127,12 +127,12 @@ snakemake -c 1 --until download
 ```
 How did the resulting actions compare to your prediction?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 3c.  What do you predict will happen if you run Snakemake a second time?
  
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 3d.  Run snakemake a second time, but this time using a separate slurm job for each step of the pipeline by running
@@ -141,19 +141,19 @@ snakemake --profile=../profile/sla --latency-wait=30
 ```
 How did the resulting actions compare to your prediction?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 3e.  Change the value of `preprocess_param` in `config.yaml`..  
 What do you predict will happen when you rerun Snakemake?  
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 3f.  Run snakemake again.
 How did the resulting actions compare to your prediction?
 
-INSERT RESPONCE
+INSERT RESPONSE
 
 
 3g.  (Optional:  Hopefully this will be helpful if you're considering using Snakemake for your project.)  
