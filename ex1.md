@@ -9,14 +9,14 @@ Organizing code into modules is another good software development habit that you
 
 Instructions for [creating a Julia Package](https://julialang.github.io/Pkg.jl/v1/creating-packages/):
 
-0.  Change out of the directory with this lab's starter repo (e.g., `cd ~`).  This is so that in subsequent steps you will create a new directory that is not inside another git repository (like the lab's starter repository).  
-1.  Use `Pkg.generate("ExamplePkg")` to create a new directory with the bare-bone minimal files for your package (ExamplePkg/Project.toml and ExamplePkg/src/ExamplePkg.jl).  Feel free to pick your own package name.
+0.  Change out of the directory with this lab's starter repo (e.g., `cd ~`).  This is so that in subsequent steps, you will create a new directory that is not inside another git repository (like the lab's starter repository).  
+1.  Use `Pkg.generate("ExamplePkg")` to create a new directory with the bare-bones minimal files for your package (ExamplePkg/Project.toml and ExamplePkg/src/ExamplePkg.jl).  Feel free to pick your own package name.
 If you might want to officially register your package, then review the [recommended conventions for package naming](https://julialang.github.io/Pkg.jl/v1/creating-packages/#Package-naming-guidelines-1) before picking your name.
 ```sh
 cd ~
 julia -e 'using Pkg; Pkg.generate("ExamplePkg")'
 ```
-2. Change into directory, copy at least one additional file that you'd like to be in your package into the directory from the beginning and use git to add and commit them to your repository.  Those might include:
+2. Change into the directory, copy at least one additional file that you'd like to be in your package into the directory from the beginning and use git to add and commit them to your repository.  Those might include:
    - a [LICENSE](https://github.com/PsuAstro528/lab9/blob/master/LICENSE) so others know how you'd like your code to be used
    - [.gitignore](https://github.com/PsuAstro528/lab9/blob/master/.gitignore) if there are some files that you don't want added to your git repository
 You can find examples of these in either your lab9 starter repository (which the commands below assumed are located in PATH) 
@@ -40,7 +40,7 @@ git branch -M main
    - Choose whether you'd like your repository to be public or private.  Do _not_ check "Initialize this repository with a README".  Select None for "Add .gitignore" and "Add a license".  
    - Click "Create Repository"
    - Copy the code under "or push an existing repository from the command line"
-   - Run that code in the directory you create in step 2, e.g.,
+   - Run that code in the directory you created in step 2, e.g.,
 ```sh
 git remote add origin git@github.com:GITHUBID/ExamplePkg.jl.git
 git push -u origin master
@@ -68,9 +68,9 @@ end
 
 end # module
 ```
-Note that the package must provide a module of the same name as the package (but without the trailing '.jl').  You can specify which function and variables you'd like users to be able to access directly after `using` your package, by listing them in `export` commands.  (A function or variables not explicitly exported would need to be accessed like `ExamplePkg.UnexportedFunction()` even after doing `using ExamplePkg.)
+Note that the package must provide a module of the same name as the package (but without the trailing '.jl').  You can specify which function and variables you'd like users to be able to access directly after `using` your package by listing them in `export` commands.  (A function or variables not explicitly exported would need to be accessed like `ExamplePkg.UnexportedFunction()` even after doing `using ExamplePkg.)
 
-Add, commit and push your changes
+Add, commit, and push your changes
 ```sh
 git add src/ExamplePkg.jl
 git commit -m "init code"
@@ -126,18 +126,18 @@ git commit -m "init tests"
 git push
 ```
 
-   - Optionally, add a [.github/workflows/test.yaml](https://github.com/PsuAstro528/lab3/blob/main/.github/workflows/test.yaml) file, if you've like GitHub to be able to perform tests and/or enable Continuous Integration testing.  
+   - Optionally, add a [.github/workflows/test.yaml](https://github.com/PsuAstro528/lab3/blob/main/.github/workflows/test.yaml) file, if you'd like GitHub to be able to perform tests and/or enable Continuous Integration testing.  
 
-   - Optionally, add a [.github/workflows/ExportPluto.yaml](https://github.com/PsuAstro528/lab3/blob/main/.github/workflows/ExportPluto.yaml) file, if you've like GitHub to be able to build html versions of your Pluto notebooks and deploy them via GitHub Pages.  
+   - Optionally, add a [.github/workflows/ExportPluto.yaml](https://github.com/PsuAstro528/lab3/blob/main/.github/workflows/ExportPluto.yaml) file, if you'd like GitHub to be able to build html versions of your Pluto notebooks and deploy them via GitHub Pages.  
 
-   - Note that, I might have to disable GitHub Actions for most repositories in the PsuAstro528 GitHub organization (if some students' projects are using significant resources), so that we didn't run exceed our allocation on GitHub.  In that case, your automated testing and notebook building won't happen.  If you create a repository that's not part of the PsuAstro528 organization, then you'll have control of whether/which repositories can automatically trigger workflows via GitHub Actions.
+   - Note that I might have to disable GitHub Actions for most repositories in the PsuAstro528 GitHub organization (if some students' projects are using significant resources), so that we don't exceed our allocation on GitHub.  In that case, your automated testing and notebook building won't happen.  If you create a repository that's not part of the PsuAstro528 organization, then you'll have control of whether/which repositories can automatically trigger workflows via GitHub Actions.
 
 
    - Add & commit your changes and push to GitHub.
 
 8.  (Optional) Add/commit/push any other files that will help potential users make use of your package more easily.  This isn't important for the lab exercise, but could be important if you wanted to share your project.  For example,
 
-   - README.md if you'd like to provide users an overview of how to install, use and cite the code in your project.  Or to provide benchmarking results showing the relative performance of your code in serial and parallel.  
+   - README.md if you'd like to provide users an overview of how to install, use, and cite the code in your project.  Or to provide benchmarking results showing the relative performance of your code in serial and parallel.  
    - For more examples of features people like to add to packages, see the [PkgTemplates.jl](https://github.com/JuliaCI/PkgTemplates.jl) package that makes it easier to build packages with a consistent set of features (e.g., code coverage testing, badges, logos, etc.)
 
 9.  Test that you and others can add your (unregistered package).
@@ -159,14 +159,14 @@ Pkg.develop(url="git@github.com:GITHUBID/ExamplePkg.jl.git")
 This will cause Julia to download the full git repository for this package into the dev directory (by default `~/.julia/dev/ExamplePkg`, but this is may be overwridden by your JULIA_DEPOT_PATH and/or JULIA_PKG_DEVDIR environment variables.).  Now, you can change into that directory to pull, push, commit and use all other features of git.  By comitting and pushing your code, you'll be updating the package on github.  
 
 
-11. Add a link to the github Repo your new package below.
+11. Add a link to the github Repo for your new package below.
 
-1a.  **TODO:**  INSERT URL TO YOU PACKAGE HERE
+1a.  **TODO:**  INSERT URL TO YOUR PACKAGE HERE
 
 12. (Very optional) Consider adding other nice features to your project.  For example:
-   - If you want code to be run whenever your package in installed (e.g., downloading large datafiles that aren't stored on github), you can put that code in [`deps/build.jl`](https://pkgdocs.julialang.org/v1/creating-packages/#Adding-a-build-step-to-the-package).
+   - If you want code to be run whenever your package is installed (e.g., downloading large datafiles that aren't stored on github), you can put that code in [`deps/build.jl`](https://pkgdocs.julialang.org/v1/creating-packages/#Adding-a-build-step-to-the-package).
    - If you want to generate webpages of documentation from your docstrings, you could add a [`docs` directory](https://github.com/JuliaLang/Example.jl/tree/master/docs) with the files necessary for [Documenter.jl](https://juliadocs.github.io/Documenter.jl/latest/).
-   - If you want to make it easy for people to install everything they need (particularly if your code combines multiple languages), then consider providing a Apptainder definition file like [julia_lab7.def](https://github.com/PsuAstro528/lab7/blob/main/julia_lab7.def) from lab 7.
+   - If you want to make it easy for people to install everything they need (particularly if your code combines multiple languages), then consider providing an Apptainer definition file like [julia_lab7.def](https://github.com/PsuAstro528/lab7/blob/main/julia_lab7.def) from lab 7.
 ```
 
 13. (Very optional) Register your package.  If you publish your package in a public GitHub repository, then people can add your package, provided that they know the url.  If you're interested in making it even easier for other people to use your package, then you could register your package in the General Julia Registry.  Then others can easily install it by name, rather than by url.  Instructions to request your package be registered are at [Registrator.jl](https://github.com/JuliaRegistries/Registrator.jl).  We can discuss this in a future class if people express interest.
