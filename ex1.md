@@ -161,7 +161,7 @@ This will cause Julia to download the full git repository for this package into 
 
 11. Add a link to the github Repo your new package below.
 
-1a.  **TODO:**  INSERT URL TO YOU PACKAGE HERE
+1a.  **TODO:** https://github.com/Samata-Statistics/ExamplePkg.jl.git
 
 12. (Very optional) Consider adding other nice features to your project.  For example:
    - If you want code to be run whenever your package in installed (e.g., downloading large datafiles that aren't stored on github), you can put that code in [`deps/build.jl`](https://pkgdocs.julialang.org/v1/creating-packages/#Adding-a-build-step-to-the-package).
